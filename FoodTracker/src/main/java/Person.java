@@ -13,12 +13,22 @@ public class Person {
     private FoodJournal foodJournal;
     private int age;
     private int maxCalories;
+    private int weight;
     
     public Person(String name, int age, int MaxCalories, FoodJournal foodJournal) {
         this.name = name;
         this.age = age;
         this.maxCalories = MaxCalories;
         this.foodJournal = foodJournal;
+        this.weight = 0;
+    }
+    
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+    
+    public int getWeight() {
+        return this.weight;
     }
     
     public FoodJournal getFoodJournal() {

@@ -50,6 +50,7 @@ public class UserInterface {
                         System.out.println("Add - Add Food");
                         System.out.println("Remove - Remove Food");
                         System.out.println("Stats - Get Current Food Stats");
+                        System.out.println("Update - Update BodyWeight");
                         System.out.println("Exit - Go To Main Menu");
                         String userCommand = this.scanner.nextLine().toLowerCase();
                         System.out.println("");
@@ -101,6 +102,13 @@ public class UserInterface {
                             System.out.println("--All Food--");
                             this.community.getPerson(name).getFoodJournal().printAllItems();                 
                             this.community.getPerson(name).getFoodJournal().printTotalStats();
+                        }
+                        
+                        if (userCommand.equals("update")) {
+                            System.out.println("Current Weight Is " + this.community.getPerson(name).getWeight());
+                            System.out.print("Enter New Weight: ");
+                            int newWeight = Integer.valueOf(this.scanner.nextLine());
+                            this.community.getPerson(name).setWeight(newWeight);
                         }
 
                         if (userCommand.equals("exit")) {
